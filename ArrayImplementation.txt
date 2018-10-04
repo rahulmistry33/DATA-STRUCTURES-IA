@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#define MAX 100
+char letters[MAX],digits[MAX],special[MAX],string[MAX];
+int topL=-1,topD=-1,topS=-1;
+
+void push(char c){
+    if(isalpha(c)){
+      topL++;
+      letters[topL] = c;
+    }
+    else if(isdigit(c)){
+      topD++;
+      digits[topD] = c;
+    }
+    else{
+      topS++;
+      special[topS] = c;
+    }
+}
+void display(char arr[],int top){
+  for(int i=top;i>=0;i--)
+   printf("%c\t",arr[i]);
+}
+
+int main(void) {
+  printf("Enter an Alphanumeric String: ");
+  char c; int i=0;
+  scanf("%[^\n]c",string);
+
+  c=string[i];
+ while(isalnum(c))
+ {
+ push(c); i++;
+ c=string[i]; 
+ }
+ push(c);
+  
+  printf("\nLetters: "); display(letters,topL);
+  printf("\n\nDigits: "); display(digits,topD);
+  printf("\n\nSpecial characters: ");display(special,topS);
+  return 0;
+}
