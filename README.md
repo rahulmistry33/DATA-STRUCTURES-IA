@@ -5,10 +5,17 @@ Problem Statement:Accept a alphanumerical string that ends with some special cha
 
 
 Contributors: 
+
 Rahul Mistry
+
 Gayatri Srinivasan
+
 Girish Thatte
+
 Amisha Waghela
+
 Kalpesh Mataghare
+
 Prachit Mhalgi 
+
 Thank you :D
