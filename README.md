@@ -1,8 +1,9 @@
 # DATA-STRUCTURES-IA
 
-Project on data structures.... 
-For problem definition refer the ppt and refer the final source code in the master branch
-Any changes...please create your branch and push. 
+Project on data structures.
+Problem Statement:Accept a alphanumerical string that ends with some special character and push the contents on three separate lists viz, Letters  on one list, digits on second and special characters on third one.
+
+
 Contributors: 
 Rahul Mistry
 Gayatri Srinivasan
