@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include<malloc.h>
+#include<ctype.h>
+
+struct stack
+{
+  int data;
+  struct stack* next;
+};
+
+struct stack *top,*top1,*top2,*top3,*start;
+
+struct stack* push(struct stack* top,int val)
+{
+  struct stack* newnode;
+  newnode=(struct stack*)malloc(sizeof(struct stack));
+  newnode->data=val;
+  if(top==NULL)
+  {
+    top=newnode;
+    newnode->next=NULL;
+  }
+  else
+  {
+     newnode->next=top;
+     top=newnode;
+  }
+  return top;
+}
+
+int display(struct stack* top)
+{
+  struct stack* ptr=top;
+  if(top==NULL)
+  return 0;
+  else{
+  while(ptr!=NULL)
+  {
+    if(isdigit(ptr->data))
+    printf("%d ",ptr->data-48);
+    else
+    printf("%c ",ptr->data);
+    ptr=ptr->next;
+  }
+ }
+  return 1;
+}
+
+int main()
+{
+  char c;
+  int i=0;
+  printf("Enter the string:  ");
+  scanf("%c",&c);
+  while(1)
+  {    
+    start=push(start,c);
+    if(isalpha(c))
+    top1=push(top1,c);
+    else if (isdigit(c))
+     top2=push(top2,c);    
+    
+    else    
+    { top3=push(top3,c);
+    break;
+    }
+ 
+    scanf("%c",&c);
+  }
+ 
+    printf("\n_________________________________________________________________");
+  printf("\nThe entered string is : ");
+  i=display(start);
+    printf("\n_________________________________________________________________");
+  printf("\nLetters: ");
+  i=display(top1);
+  if(i==0)
+  printf("No letters in entered string");
+   printf("\n_________________________________________________________________");
+  printf("\nDigits: ");
+  i=display(top2);
+  if(i==0)
+  printf("No digits in entered string");
+   printf("\n_________________________________________________________________");
+  printf("\nSpecial characters: ");
+  i=display(top3);
+  if(i==0)
+  printf("No special characters in entered string");
+  printf("\n_________________________________________________________________");
+}
